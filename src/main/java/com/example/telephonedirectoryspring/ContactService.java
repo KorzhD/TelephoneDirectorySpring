@@ -1,4 +1,4 @@
-import org.springframework.stereotype.Service;
+package com.example.telephonedirectoryspring;
 
 import java.util.List;
 
@@ -13,7 +13,4 @@ public interface ContactService {
     void deleteByName(String firstName, String lastName);
     Contact findByLastName(String lastName);
     Contact updateContact(Contact contact);
-
-
-
 }
