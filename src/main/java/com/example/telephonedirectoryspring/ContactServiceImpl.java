@@ -1,11 +1,9 @@
+package com.example.telephonedirectoryspring;
+
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-
-
-
 
 @Service
 @AllArgsConstructor
@@ -25,7 +23,7 @@ public class ContactServiceImpl implements ContactService{
 
     @Override
     public Contact findByFullName(String firstName, String lastName) {
-        return repository.findByFullName(firstName, lastName);
+        return repository.findByFirstNameAndLastName(firstName, lastName);
     }
 
     @Override
@@ -42,7 +40,7 @@ public class ContactServiceImpl implements ContactService{
     @Override
     @Transactional
     public void deleteByName(String firstName, String lastName) {
-    repository.deleteByName(firstName, lastName);
+    repository.deleteByFirstNameAndLastName(firstName, lastName);
     }
 
     @Override
